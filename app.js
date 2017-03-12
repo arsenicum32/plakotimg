@@ -7,12 +7,14 @@ var Chance = require('chance');
 
 var chance = new Chance();
 
+var path = '/home/penfile/penfile/test/uploadedfiles'
+
 app.use(bodyParser.urlencoded({ extended: false , limit: '200mb'}))
 app.use(bodyParser.json({limit: '200mb'}))
 
 app.get('/', function (req, res) {
   var files   = [];
-  var walker  = walk.walk(__dirname+'/img', { followLinks: false });
+  var walker  = walk.walk(path, { followLinks: false });
   walker.on('file', function(root, stat, next) {
       files.push( '/' + stat.name);
       next();
@@ -34,19 +36,19 @@ var gn = (st)=>{
 
 app.get('/:id', function (req, res) {
   var files   = [];
-  var walker  = walk.walk(__dirname+'/img', { followLinks: false });
+  var walker  = walk.walk(path, { followLinks: false });
   walker.on('file', function(root, stat, next) {
       files.push( '/' + stat.name);
       next();
   });
   walker.on('end', function() {
-      res.sendFile( __dirname + '/img'+files[ gn(req.params.id) % files.length ] );
+      res.sendFile( path+files[ gn(req.params.id) % files.length ] );
   });
 });
 
 app.get('/all', function (req, res) {
   var files   = [];
-  var walker  = walk.walk(__dirname+'/img', { followLinks: false });
+  var walker  = walk.walk(path, { followLinks: false });
   walker.on('file', function(root, stat, next) {
       files.push( '/' + stat.name);
       next();

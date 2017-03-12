@@ -1,3 +1,5 @@
-A Pen created at CodePen.io. You can find this one at http://codepen.io/Arsenicum32/pen/LWxadg.
-
- 
+[
+ ['#ff0000', '#404040', '#fefefe', ''],
+ ['#defs'],
+ ['']
+]
