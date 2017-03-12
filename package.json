@@ -1,0 +1,16 @@
+{
+  "name": "plakotimg",
+  "version": "1.0.0",
+  "description": "A Pen created at CodePen.io. You can find this one at http://codepen.io/Arsenicum32/pen/LWxadg.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ars32",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.0.6",
+    "express": "^4.15.2",
+    "walk": "^2.3.9"
+  }
+}
